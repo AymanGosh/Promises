@@ -1,10 +1,9 @@
-
 const getWeather=function(){
   return new Promise(
     function(res,rej){
     setTimeout(function(){
       res("done11")
-    },1000)
+    },3000)
     })
 } 
 
@@ -14,7 +13,7 @@ const getIcon=function(data){
     function(res,rej){
     setTimeout(function(){
       res(data+" done22")
-    },1000)
+    },2000)
     })
 } 
 
