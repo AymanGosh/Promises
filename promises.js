@@ -21,4 +21,4 @@ const finish=function(data){
     console.log("data3-> "+data)
 }
 
-getWeather().then(getIcon).then(finish)
+getWeather().then(getIcon).then(finish)//"data3-> done11 done22"
