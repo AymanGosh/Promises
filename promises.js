@@ -1,3 +1,4 @@
+
 const getWeather=function(){
   return new Promise(
     function(res,rej){
@@ -18,7 +19,7 @@ const getIcon=function(data){
 } 
 
 const finish=function(data){
-    console.log("data3-> "+data)
+    console.log(data+" data33")
 }
 
-getWeather().then(getIcon).then(finish)//"data3-> done11 done22"
+getWeather().then(getIcon).then(finish)//"done11 done22 data33"
