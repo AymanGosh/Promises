@@ -38,7 +38,8 @@ const getSentiment = function (word) {
         'Plan': 0,
         'Photograph': 0,
         'Bark': -1,
-        'There': -1
+        'There': -1,
+        'Elusive':1
     }
    
     return new Promise((resolve, reject) => {
@@ -55,7 +56,8 @@ const getSentimentDescription = function (sentiment) {
 }
 
 
-getRandomWord().then(getSynonyms).then(getSentiment).then(getSentimentDescription)
+//getRandomWord().then(getSynonyms).then(getSentiment).then(getSentimentDescription)
+
 /*
 getRandomWord =>Elusive
 getSynonyms =>Slick
@@ -63,7 +65,23 @@ getSentiment =>-1
 getSentimentDescription => Negative
 */
 
-
+getRandomWord()
+    .then((wordParam) => {
+        let synonymsPromise = getSynonyms(wordParam)
+        let sentimentPromise = getSentiment(wordParam)
+        return Promise.all([synonymsPromise, sentimentPromise])
+    })
+    .then((promiseResults) => {
+        
+        
+        console.log(promiseResults)
+    })
+/*
+getRandomWord =>Elusive
+getSentiment =>1
+getSynonyms =>Slick
+[ 'Slick', 1 ]
+*/
     
 // getRandomWord()
 //     .then((word) => {
@@ -76,3 +94,5 @@ getSentimentDescription => Negative
 //         const sentimentDescription = getSentimentDescription(sentiment)
 //         console.log(sentimentDescription)
 //     })
+    
+    
