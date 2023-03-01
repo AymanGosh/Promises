@@ -56,8 +56,7 @@ const getSentimentDescription = function (sentiment) {
 }
 
 
-//getRandomWord().then(getSynonyms).then(getSentiment).then(getSentimentDescription)
-
+getRandomWord().then(getSynonyms).then(getSentiment).then(getSentimentDescription)
 /*
 getRandomWord =>Elusive
 getSynonyms =>Slick
